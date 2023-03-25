@@ -1,0 +1,15 @@
+[
+  {
+    "name": "app02",
+    "script": "app02.js",
+    "cwd": "/Users/hakanhammarin/olasolutions/form",
+    "watch": true
+  },
+  {
+    "name": "dummy01",
+    "script": "dummy01.js",
+    "cwd": "/Users/hakanhammarin/olasolutions/form",
+    "watch": true
+  }
+]
+

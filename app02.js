@@ -22,6 +22,12 @@ app.get('/', (req, res) => {
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
 
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
 <script>
 $(function() {
   $("#organisation_name").autocomplete({
@@ -51,60 +57,145 @@ $(function() {
 });
 </script>
 
-   <form method="POST" action="/submit">
-      <label for="event-id">Event ID:</label>
-      <input type="text" id="event-id" name="eventId"><br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<style>
+  form {
+    margin: 4px;
+  }
 
-      <label for="event-name">Event Name:</label>
-      <input type="text" id="event-name" name="eventName"><br>
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
 
-      <label for="event-date">Event Date:</label>
-      <input type="date" id="event-date" name="eventDate"><br>
+  input[type="text"],
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+  }
+</style>
 
-      <label for="event-start-time">Event Start Time:</label>
-      <input type="time" id="event-start-time" name="eventStartTime"><br>
+<form class="row g-3 needs-validation mx-auto mx-md-5" method="POST" action="/submit" novalidate>
+  <div class="col-md-6">
+    <label for="event-name" class="form-label">Event:</label>
+    <input type="text" class="form-control" id="event-name" name="eventName" required>
+    <div class="invalid-feedback">
+      Please enter an Event.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="event-id" class="form-label">Event ID:</label>
+    <input type="text" class="form-control" id="event-id" name="eventId" readonly tabindex="-1">
+    
+  </div>
+  <div class="col-md-6">
+    <label for="event-date" class="form-label">Event Date:</label>
+    <input type="date" class="form-control" id="event-date" name="eventDate" readonly tabindex="-1">
+    
+  </div>
+  <div class="col-md-6">
+    <label for="event-start-time" class="form-label">Event Start Time:</label>
+    <input type="time" class="form-control" id="event-start-time" name="eventStartTime" readonly tabindex="-1">
+    
+  </div>
+  <div class="col-md-6">
+    <label for="person-id" class="form-label">Person ID:</label>
+    <input type="text" class="form-control" id="person-id" name="personId" required>
+    <div class="invalid-feedback">
+      Please enter a person ID.
+    </div>
+  </div>
+<div class="col-md-6">
+      <label for="person_given_name" class="form-label">Person Given Name:</label>
+      <input type="text" class="form-control" id="person_given_name" name="personGivenName" required>
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="person_family_name" class="form-label">Person Family Name:</label>
+      <input type="text" class="form-control" id="person_family_name" name="personFamilyName" required>
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="person_birth_date" class="form-label">Person Birth Date:</label>
+      <input type="date" class="form-control" id="person_birth_date" name="personBirthDate" required>
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="person_nationality" class="form-label">Person Nationality:</label>
+      <input type="text" class="form-control" id="person_nationality" name="personNationality" required>
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="organisation_id" class="form-label">Organisation ID:</label>
+      <input type="text" class="form-control" id="organisation_id" name="organisationId">
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
 
-      <label for="person-id">Person ID:</label>
-      <input type="text" id="person-id" name="personId"><br>
+      <label for="organisation_name" class="form-label">Organisation:</label>
+      <input type="text" class="form-control" id="organisation_name" name="organisation_name" required>
 
-      <label for="person-given-name">Person Given Name:</label>
-      <input type="text" id="person-given-name" name="personGivenName"><br>
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="organisation_short_name" class="form-label">Organisation Short Name:</label>
+      <input type="text" class="form-control" id="organisation_short_name" name="organisation_short_name" readonly tabindex="-1">
 
-      <label for="person-family-name">Person Family Name:</label>
-      <input type="text" id="person-family-name" name="personFamilyName"><br>
+  </div>
+  <div class="col-md-6">
+      <label for="organisation_media_name" class="form-label">Organisation Media Name:</label>
+      <input type="text" class="form-control" id="organisation_media_name" name="organisation_media_name" readonly tabindex="-1">
 
-      <label for="person-birth-date">Person Birth Date:</label>
-      <input type="date" id="person-birth-date" name="personBirthDate"><br>
+  </div>
+  <div class="col-md-6">
+      <label for="organisation_country" class="form-label">Organisation Country:</label>
+      <input type="text" class="form-control" id="organisation_country" name="organisation_country" readonly tabindex="-1">
 
-      <label for="person-nationality">Person Nationality:</label>
-      <input type="text" id="person-nationality" name="personNationality"><br>
-
-      <label for="organisation-id">Organisation ID:</label>
-      <input type="text" id="organisation-id" name="organisationId"><br>
-
-
-      <label for="organisation_name">Organisation Name:</label>
-      <input type="text" id="organisation_name" name="organisation_name"><br>
-
-
-      <label for="organisation_short_name">Organisation Short Name:</label>
-      <input type="text" id="organisation_short_name" name="organisation_short_name"><br>
-
-      <label for="organisation_media_name">Organisation Media Name:</label>
-      <input type="text" id="organisation_media_name" name="organisation_media_name"><br>
-
-      <label for="organisation_country">Organisation Country:</label>
-      <input type="text" id="organisation_country" name="organisation_country"><br>
-
-      <label for="control-card">Control Card:</label>
-      <input type="text" id="control-card" name="controlCard"><br>
-
-      <label for="class-id">Class ID:</label>
-      <input type="text" id="class-id" name="classId"><br>
-
-      <label for="class-name">Class Name:</label>
-      <input type="text" id="class-name" name="className"><br>
-
+  </div>
+  <div class="col-md-6">
+      <label for="control_card" class="form-label">Control Card:</label>
+      <input type="text" class="form-control" id="control_card" name="controlCard">
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="class_id" class="form-label">Class ID:</label>
+      <input type="text" class="form-control" id="class_id" name="classId">
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="class_name" class="form-label">Class:</label>
+      <input type="text" class="form-control" id="class_name" name="className">
+<div class="invalid-feedback">
+      Please enter an event name.
+    </div>
+  </div>
       <input type="submit" value="Submit">
     </form>
   `);
